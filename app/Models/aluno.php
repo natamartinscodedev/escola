@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class aluno extends Modal {
+class Aluno extends Modal {
     protected $table            = 'aluno';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;

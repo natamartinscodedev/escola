@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 
 class Escola extends Model
 {
-    protected $table            = 'escola';
+    protected $table            = 'dados_escola';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';

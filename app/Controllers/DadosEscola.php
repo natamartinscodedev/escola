@@ -1,27 +1,27 @@
 <?php
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
 use App\Models\escola;
 use App\Models\prof;
 use App\Models\alunos;
 
-class InfoEscola extends Controller
+class DadosEscola extends BaseController
 {
-    public function escola(){
-        $modEscola = new escola();
+    public function infoEscola() {
+        // $modEscola = new escola();
 
         $data = [
-            'dadosEscola' => $modEscola->findAll(),
-            'title' => 'Escolas'
+            'dadosEscola' => 'cheguei aqui',
+            'title' => 'Escola'
         ];
 
-        if($data === false)
-        {
-            throw new Exception("Erro ao carregar dados da escola", 400);
-        }
+        // if($data === false)
+        // {
+        //     throw new Exception("Erro ao carregar dados da escola", 400);
+        // }
 
-        return $this->response->setJSON($data);
+        // return $this->res->setJSON($data);
+        return view('/escola', $data);
     }
 
     public function prof() {
@@ -31,6 +31,9 @@ class InfoEscola extends Controller
             'dadosProf' => $modProf->findAll(),
             'title' => 'Professores'
         ];
+
+        
+        return $this->res->setJSON($data);
     }
 
     public function aluno() {
@@ -40,5 +43,7 @@ class InfoEscola extends Controller
             'dadosAluno' => $modAluno->findAll(),
             'title' => 'Alunos'
         ];
+        
+        return $this->res->setJSON($data);
     }
 }

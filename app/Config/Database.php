@@ -24,12 +24,15 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
+
+    // hostname: 127.0.0.1
+
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => '',
+        'username'     => 'root',
         'password'     => '',
-        'database'     => '',
+        'database'     => 'escola',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

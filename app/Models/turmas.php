@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class turmas extends Modal {
+class Turmas extends Modal {
     protected $table            = 'turmas';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;

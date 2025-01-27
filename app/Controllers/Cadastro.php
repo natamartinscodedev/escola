@@ -12,13 +12,13 @@ class Cadastro extends Controller
     public function escola(){
         // criando uma const para cada campo do formulário e recebendo seus valores
         $name = $this->request->getPost('name', FILTER_SANITIZE_STRING);
-        $telefone = $this->request->getPost('telefone', FILTER_SANITIZE_STRING);
+        $tel = $this->request->getPost('tel', FILTER_SANITIZE_STRING);
         $email = $this->request->getPost('email', FILTER_SANITIZE_STRING);
         $site = $this->request->getPost('site', FILTER_SANITIZE_STRING);
-        $responsavel = $this->request->getPost('responsavel', FILTER_SANITIZE_STRING);
+        $response = $this->request->getPost('response', FILTER_SANITIZE_STRING);
         $cnpj = $this->request->getPost('cnpj', FILTER_SANITIZE_STRING);
 
-        if(empty($name && $telefone && $email && $site && $responsavel && $cnpj)) 
+        if(empty($name && $tel && $email && $site && $response && $cnpj)) 
         {
             throw new Exception("Os campos são obrigatórios", 400);            
         }
@@ -27,10 +27,10 @@ class Cadastro extends Controller
         $escola = new escola();
         $res = $model->save([
             'name' => $name,
-            'telefone' => $telefone,
+            'tel' => $tel,
             'email' => $email,
             'site' => $site,
-            'responsavel' => $responsavel,  
+            'response' => $response,  
             'cnpj' => $cnpj
         ]);
 
