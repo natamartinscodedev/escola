@@ -70,7 +70,8 @@ class Cadastro extends Controller
         }
         
         // retornando a resposta em formato JSON
-        return $this->response->setJSON($res);
+        // return $this->response->setJSON($res);
+        return redirect()->to(base_url('/dadosProf'));
     }
 
     public function aluno(){
@@ -98,6 +99,7 @@ class Cadastro extends Controller
         }
         
         // retornando a resposta em formato JSON
-        return $this->response->setJSON($res);
+        // return $this->response->setJSON($res);
+        return redirect()->to(base_url('/dadosAluno'));
     }
 }

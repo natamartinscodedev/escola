@@ -3,7 +3,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Prof extends Modal {
+class Prof extends Modal 
+{
     protected $table            = 'prof';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
@@ -12,9 +13,9 @@ class Prof extends Modal {
     protected $protectFields    = true;
     protected $allowedFields    = [
         'nome', 
-        'cpf', 
-        'sala',
-        'turno'
+        'turno', 
+        'sala', 
+        'cpf'
     ];
 
     protected bool $allowEmptyInserts = false;

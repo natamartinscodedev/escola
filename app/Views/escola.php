@@ -7,8 +7,18 @@
 </head>
 <body>
      <div>
-        <h1><?= $title ?></h1>
-        <p><?= $dadosEscola ?></p>     
+        <h1><?= $title ?></h1>     
+     </div>
+     <div>
+        <?php foreach($dadosEscola as $value): ?>
+            <p><?= $value->nome ?></p> 
+            <p><?= $value->endereco ?></p> 
+            <p><?= $value->telefone ?></p> 
+            <p><?= $value->email ?></p>
+            <a href="{<?= $value->site ?>}">site</a>
+            <p><?= $value->cnpj ?></p> 
+            <p>site</p> 
+        <?php endforeach; ?>
      </div>
 </body> 
 </html>

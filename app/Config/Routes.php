@@ -7,9 +7,14 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // get
-$routes->get('/dados', 'DadosEscola::infoEscola');
+$routes->get('/', 'DadosEscola::infoEscola');
+$routes->get('/dadosProf', 'DadosEscola::infoProf');
+$routes->get('/dadosAluno', 'DadosEscola::infoAluno');
 
 // post
-// $routes->post('/escola', 'Cadastro::escola');
-// $routes->post('/prof', 'Cadastro::prof');
-// $routes->post('/aluno', 'Cadastro::aluno');
+$routes->post('/registerProf', 'Cadastro::prof');
+$routes->post('/registerAluno', 'Cadastro::aluno');
+
+// update
+$routes->put('/updateProf', 'EditarUsers::updateProf');
+$routes->put('/updateAluno', 'EditarUsers::updateAluno');

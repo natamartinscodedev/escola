@@ -8,35 +8,40 @@ use App\Models\alunos;
 class DadosEscola extends BaseController
 {
     public function infoEscola() {
-        // $modEscola = new escola();
+        $modEscola = new escola();
 
         $data = [
-            'dadosEscola' => 'cheguei aqui',
+            'dadosEscola' => $modEscola->findAll(),
             'title' => 'Escola'
         ];
 
-        // if($data === false)
-        // {
-        //     throw new Exception("Erro ao carregar dados da escola", 400);
-        // }
+        if($data === false)
+        {
+            throw new Exception("Erro ao carregar dados da escola", 400);
+        }
 
         // return $this->res->setJSON($data);
         return view('/escola', $data);
     }
 
-    public function prof() {
-        $modProf = new prof();
+    public function infoProf() {
+        $modProf = new escola();
 
         $data = [
             'dadosProf' => $modProf->findAll(),
             'title' => 'Professores'
         ];
 
-        
-        return $this->res->setJSON($data);
+        if($data === false)
+        {
+            throw new Exception("Erro ao carregar dados da escola", 400);
+        }   
+
+        // return $this->res->setJSON($data);
+        return view('/prof', $data);
     }
 
-    public function aluno() {
+    public function infoAluno() {
         $modAluno = new alunos();
 
         $data = [
